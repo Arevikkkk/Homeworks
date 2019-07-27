@@ -28,7 +28,7 @@ function evenDigitsNumbersBetweenTheGiven(start, end) {
         if (lastDigit % 2 !== 0 && firstDigit % 2 !== 0) {
             result = 'Such numbers does not exist.';
         } else {
-            str += i + ', ';
+            str += i + ', '; // verjin tvic heto storakety chem karoxanum nenc anem, vor chdni
             result = str;
         }
     }
