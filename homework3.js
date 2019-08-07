@@ -33,6 +33,6 @@ function productOfNegatives(arr) {
     return result;
 }
 
-var array = [[2, -9, -3, 0], [1, 2], [-4 , -11, 0]];
+let array = [[2, -9, -3, 0], [1, 2], [-4 , -11, 0]];
 console.log(biggestNegativeNumberOfArray(array));
 
