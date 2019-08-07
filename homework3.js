@@ -36,3 +36,22 @@ function productOfNegatives(arr) {
 let array = [[2, -9, -3, 0], [1, 2], [-4 , -11, 0]];
 console.log(biggestNegativeNumberOfArray(array));
 
+
+/* Task2 */
+
+function countOfNumbersAndStrings(arr) {
+    let countNum = 0;
+    let countStr = 0;
+    for (let value of arr) {
+        if (typeof value === 'number') {
+            countNum++;
+        } else if (typeof value === 'string') {
+            countStr++;
+        }
+    }
+    return `Numbers: ${countNum}, Strings: ${countStr}`;
+}
+
+let array = [1, '10', 'hi', 2, 3];
+console.log(countOfNumbersAndStrings(array));
+
