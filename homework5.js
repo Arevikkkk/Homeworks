@@ -5,7 +5,6 @@ let tens = ['twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninet
 let hundreds = ['hundred','thousand'];
 
 function numberToWords(num) {
-    debugger;
     if (num < 20) {
         return digits[num];
 
