@@ -21,3 +21,69 @@ function numberToWords(num) {
 
 console.log(numberToWords(+prompt())); // minchev 10000-na ashxatum, kisata der
 
+
+
+
+// 3. Given a word and a list of possible anagrams, select the correct sublist.
+
+function anagrams(str, arr) {
+    let result = '';
+    let resArr = [];
+    for (let value of arr) {
+        if (str.length !== value.length) {
+            continue;
+        }
+        for (let i = 0; i < value.length; i++) {
+            for (let j = 0; j < str.length; j++) {
+                if (value[i] === str[j]) {
+                    result += value[i];
+                }
+            }
+        }
+        if (result.length === str.length) {
+            resArr.push(result);
+            result = '';
+        } else {
+            result = '';
+        }
+    }
+    return resArr;
+}
+
+let word = 'pencil';
+let list = ['licnep', 'circular', 'pupil', 'nilcpe', 'leppnec'];
+console.log(anagrams(word, list));
+
+
+// 4. Write a function, which receives an array as an argument which elements arrays of numbers. Find biggest negative number of each array. If there is not any negative number, ignore that array. Check that items of the given array are arrays.
+
+const biggestNegativeNumber = arr => {
+    let newArr = [];
+    let result = 1;
+    for (let item of arr) {
+        if (Array.isArray(item)) {
+            for (let i = 0; i < item.length; i++) {
+                if (item[i] < 0) {
+                    newArr.push(item[i]);
+                } else {
+                    continue;
+                }
+            }
+            if (newArr.length) {
+                result *= Math.max(...newArr);
+                newArr = [];
+            }
+        } else {
+            return 'Invalid Argument';
+        }
+    }
+    if (result === 1) {
+        return 'No negatives';
+    }
+    return result;
+}
+
+let array = [[2, -9, -3, 0], [1, 2], [-4 , -11, 0]];
+console.log(biggestNegativeNumber(array));
+
+
