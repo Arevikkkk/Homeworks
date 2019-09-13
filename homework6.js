@@ -1,14 +1,18 @@
 // 1. Given a sorted array and an element from that array. Find the index of that element using binary search.
 
 function binarySearch(arr, num) {
-    for (let i = 0; i < Math.floor(arr.length/2); i++) {
-        if (num === arr[i]) {
-            return i;
+    let startIndex = 0;
+    let endIndex = arr.length - 1;
+    while (startIndex <= endIndex) {
+        let middleIndex = Math.floor((startIndex + endIndex) / 2);
+        if (num === arr[middleIndex]) {
+            return middleIndex;
         }
-    }
-    for (let j = Math.floor(arr.length/2); j < arr.length; j++) {
-        if (num === arr[j]) {
-            return j;
+        if (num > arr[middleIndex]) {
+            startIndex = middleIndex + 1;
+        }
+        if (num < arr[middleIndex]) {
+            endIndex = middleIndex - 1;
         }
     }
 }
